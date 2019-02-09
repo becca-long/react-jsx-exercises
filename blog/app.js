@@ -1,16 +1,65 @@
 let Header = () => {
-    return <span>Design a header for your blog</span>
+    return (
+    <header>
+        <h1>Becca's Best Blog</h1>
+    </header>)
 }
-let Article = () => {
-    return <span>Write and design your blog article</span>
+let Article = (props) => {
+    return (
+    <div>
+        <h3>{props.title}</h3>
+        <div>
+        {props.article}
+        </div>
+    </div>)
 }
 let Footer = () => {
-    return <span>Design a footer for your blog</span>
+    return (
+    <footer>
+        The end.
+    </footer>)
 }
+
+let firstArticle = (
+    <span>I'm trying out some new stuff. 
+        Think React seems pretty cool.
+        Not sure what I'm doing.
+    </span>
+)
+
+let secondArticle = (
+    <span>Ok this framework is letting me do some pretty cool things.
+        Still not sure I know all how to use it.
+        But liking the possibilities.
+    </span>
+)
+
+let thirdArticle = (
+    <span>Getting the hang of it now. 
+        Very cool.
+        Thinking I'm going to be using React.
+        Love how easy it is.
+    </span>
+)
+
+let fourthArticle = (
+    <span>I AM THE MASTER.
+        YES. I HAVE CONQUERED REACT.
+        YOU'RE WELCOME CODEBASE.
+    </span>
+)
 
 let Blog = () => {
-    return <span>Make this Component render the header, article, and footer</span>
+    return (
+    <div>
+        <Header/>
+        <Article title="My First Article" article={firstArticle}/>
+        <Article title="Starting to Get the Hang of React" article={secondArticle}/>
+        <Article title="Ok I'm Feeling It Now" article={thirdArticle}/>
+        <Article title="Now I'm a Master" article={fourthArticle}/>
+        <Footer/>
+    </div>
+    )
 }
 
-
-ReactDOM.render(<Blog />, document.getElementById('root'))
+ReactDOM.render(<Blog/>, document.getElementById('root'))
